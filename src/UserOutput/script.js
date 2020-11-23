@@ -4,7 +4,7 @@ export default {
     data() {
         return {
           newUsername: null,
-          noUserFound: true,
+          noUserFound: false,
           gitUser: {},
           repos: null,
           stars: null,
@@ -23,6 +23,11 @@ export default {
             this.gitUser = result.data
             this.repos = result.data.public_repos
             this.getUserRepos(username, this.repos)
+          })
+          .catch((e) => {
+            if (e.response) {
+              this.noUserFound = true
+            }
           })
         },
         getUserRepos(username, repos) {
@@ -48,11 +53,6 @@ export default {
       },
       voltarHome() {
         this.$router.push({ name: 'UserInput' })
-      }
-    },
-    computed: {
-      starsRepos() {
-        return 
       }
     },
     created() {

@@ -1,29 +1,29 @@
 <template>
     <div class="nav">
+      <div class="button-back">
         <button @click="voltarHome()" class="btn">
           <i class="material-icons" style="font-size:30px;color:white;">arrow_back</i>
         </button>
-      <div v-if="this.gitUser.id" >
+      </div>
+      <div v-if="this.gitUser.id" class="info">
         <div class="user">
-          <img
+            <img
             :src="gitUser.avatar_url"
             alt="User Image"
-            width="100%" height="50%"
-          >
-          <div class="user-info">
-            <h3 v-if="gitUser.login !== null" class="title">{{ gitUser.login }} </h3>
-            <h4 v-if="gitUser.name !== null" class="subtitle"> <i class="material-icons">person</i>  {{ gitUser.name }} </h4>
-            <p v-if="gitUser.company !== null">  <i class="material-icons">business_center</i> {{ gitUser.company}}</p>
-            <p v-if="gitUser.location !== null"> <i class="material-icons">place</i> {{ gitUser.location}}</p>
-            <p v-if="gitUser.public_repos !== null"> <i class="material-icons">folder</i> {{ gitUser.public_repos}}</p>
-            <p v-if="gitUser.followers !== null"> <i class="material-icons">people</i>  {{ gitUser.followers }}</p>
-            <p v-if="stars !== null"> <i class="material-icons">star</i> {{ stars }}</p>
-            <p><a
+            width="280px" height="280px">
+          <h3 v-if="gitUser.login !== null" class="title">{{ gitUser.login }} </h3>
+          <h4 v-if="gitUser.name !== null" class="subtitle"> <i class="material-icons">person</i>  {{ gitUser.name }} </h4>
+          <p v-if="gitUser.company !== null">  <i class="material-icons">business_center</i> {{ gitUser.company}}</p>
+          <p v-if="gitUser.location !== null"> <i class="material-icons">place</i> {{ gitUser.location}}</p>
+          <p v-if="gitUser.public_repos !== null"> <i class="material-icons">folder</i> {{ gitUser.public_repos}}</p>
+          <p v-if="gitUser.followers !== null"> <i class="material-icons">people</i>  {{ gitUser.followers }}</p>
+          <p v-if="stars !== null"> <i class="material-icons">star</i> {{ stars }}</p>
+          <p>
+            <a
               :href="gitUser.html_url"
               target="_blank"
             >Ver o perfil no site do Github</a>
-            </p>
-          </div>
+          </p>
         </div>
         <div class="repos">
           <div v-for="gitRepo in gitRepos" 
@@ -35,8 +35,11 @@
         </div> 
       </div>
       <div v-else class="error-box" >
-        <span class="search-box title-1" >
+        <span v-if="this.noUserFound === true" class="search-box title-1" >
           Usuário não encontrado
+        </span>
+         <span v-else class="search-box title-1" >
+          Carregando...
         </span>
       </div>
   </div>
