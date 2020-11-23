@@ -1,0 +1,52 @@
+.nav-box {
+    font-size: 60px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 400px;
+    background: white;
+}
+
+.title-1 {
+    font-weight: bold;
+    font-family: 'Consolas';
+}
+
+.title-2 {
+    font-style: italic;
+    font-family: 'Be Vietnam';
+}
+
+span {
+    margin: 0px;
+}
+
+.search-box{
+    width: 700px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 2px;
+}
+
+input {
+    font-size: 30px;
+    height: 35px;
+    width: 85%;
+    outline: none;
+    border: 2px solid black;
+    border-right: none;
+}
+
+button {
+    background: black;
+    height: 41px;
+    width: 15%;
+    cursor: pointer;
+    border: 0px;
+}
