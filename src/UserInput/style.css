@@ -1,12 +1,30 @@
+@media screen and (max-width: 720px) {
+    .nav-box {
+        width: 100%;
+        margin-top: 100px;
+        background: white;
+    }
+
+    .search-box{
+        width: auto;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        margin: 2px;
+    }
+
+}
+
 .nav-box {
-    font-size: 60px;
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-top: 100px;
+    width: 70%;
+    padding: 200px;
     background: white;
 }
 
@@ -20,12 +38,8 @@
     font-family: 'Be Vietnam';
 }
 
-span {
-    margin: 0px;
-}
-
 .search-box{
-    width: 700px;
+    width: 100%;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -41,6 +55,11 @@ input {
     outline: none;
     border: 2px solid black;
     border-right: none;
+}
+
+span {
+    margin: 0px;
+    font-size: 60px;
 }
 
 button {
